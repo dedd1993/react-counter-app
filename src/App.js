@@ -18,8 +18,12 @@ class App extends Component {
     console.log("App - constructor", this.props);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("App - Updated", prevProps, prevState);
+  }
+
   componentDidMount() {
-    console.log("App - componentDidMount");
+    console.log("App - Mounted");
   }
 
   handleIncrement = counter => {
@@ -44,7 +48,7 @@ class App extends Component {
   };
 
   render() {
-    console.log("App - render");
+    console.log("App - Rendered");
 
     return (
       <React.Fragment>
