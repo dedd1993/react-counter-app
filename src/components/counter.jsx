@@ -1,23 +1,28 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  constructor(props) {
+    super(props);
+    console.log("%c Counter - constructor", 'background: #222; color: #f9551a', this.props);
+  }
+
   componentWillUnmount() {
-    console.log("Counter - Unmount");
+    console.log("%c Counter - Unmount", 'background: #222; color: #f9551a');
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("Counter - Updated", prevProps, prevState);
+    console.log("%c Counter - Updated", 'background: #222; color: #f9551a', prevProps, prevState);
   }
 
   componentDidMount() {
-    console.log("Counter - Mounted");
+    console.log("%c Counter - Mounted", 'background: #222; color: #f9551a');
   }
 
   render() {
-    console.log("Counter - Rendered");
+    console.log("%c Counter - Rendered", 'background: #222; color: #f9551a');
 
     return (
-      <div>
+      <div className="counter">
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={() => this.props.onIncrement(this.props.counter)}

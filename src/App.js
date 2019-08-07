@@ -15,15 +15,15 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    console.log("App - constructor", this.props);
+    console.log("%c App - constructor", 'background: #222; color: #bada55', this.props);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("App - Updated", prevProps, prevState);
+    console.log("%c App - Updated", 'background: #222; color: #bada55', prevProps, prevState);
   }
 
   componentDidMount() {
-    console.log("App - Mounted");
+    console.log("%c App - Mounted", 'background: #222; color: #bada55');
   }
 
   handleIncrement = counter => {
@@ -48,14 +48,14 @@ class App extends Component {
   };
 
   render() {
-    console.log("App - Rendered");
+    console.log("%c App - Rendered", 'background: #222; color: #bada55');
 
     return (
       <React.Fragment>
         <Navbar
           totalCounters={this.state.counters.filter(c => c.value > 0).length}
         />
-        <main className="conatiner">
+        <main className="container">
           <Counters
             counters={this.state.counters}
             onReset={this.handleReset}
